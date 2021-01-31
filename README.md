@@ -1,4 +1,4 @@
-# Sette-e-mezzo-AI# <a id="Sette_e_mezzo_AI_0"></a>Sette e mezzo AI
+# Sette e mezzo AI
 
 Nella cartella “sette_e_mezzo_DTProblog” sono contenuti tutti i files relativi al progetto.  
 Si necessita di una versione python 3.8, dei moduli pyswip e problog ed una versione dell’interprete swi-prolog 8.2.  
