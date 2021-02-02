@@ -20,6 +20,10 @@ Una volta copiato il file posizionarsi all'interno della directory principale (s
 
     $ docker image build . -t [nome immagine]
 
+per versioni del client docker inferiori alla 1.13 il comando di sopra diventa:
+
+    $ docker build . -t [nome immagine]
+
 A questo punto è stata costruita l'immagine su cui si può istanziare un container tramite il comando :
 
     $ docker run -it --name [nome container] [nome immagine]
@@ -38,6 +42,10 @@ Questa cartella contiene il Dockerfile da cui si può generare l'immagine docker
 Per costruire l'immagine occorre posizionarsi all'interno della cartella "sem_immagine-base" e digitare il comando:
   
     $ docker image build .-t [nome immagine]
+
+per versioni del client docker inferiori alla 1.13 il comando di sopra diventa:
+
+    $ docker build . -t [nome immagine]
 
 A questo punto è possibile creare un contenitore “montando” al suo interno la cartella del progetto che manterrà le modifiche apportate fuori dal contenitore.  
 Per fare ciò muoversi all’interno della cartella principale (progetto_AI) e lanciare il comando:
