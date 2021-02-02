@@ -16,7 +16,7 @@ class PlayerController(PlayerModel):
         :type prolog: PrologController
         :param prolog: Oggetto PrologController che estende la classe Prolog del modulo pyswip
         '''
-        super(PlayerController, self).__init__(nome,soldi,prolog)
+        super(PlayerController, self).__init__(nome.lower(),soldi,prolog)
         self.add_to_db(prolog)
 
     def pesca(self, prolog):
