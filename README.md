@@ -18,10 +18,6 @@ Questo cartella contiene il Dockerfile da cui si può generare l'immagine docker
 Il Dockerfile necessita della cartella contenente il codice, per cui per costruire l'immagine bisogna copiare il Dockerfile nella directory principale.
 Una volta copiato il file posizionarsi all'interno della directory principale (sette-e-mezzo-AI) e lanciare il seguente comando:
 
-    $ docker image build . -t [nome immagine]
-
-per versioni del client docker inferiori alla 1.13 il comando di sopra diventa:
-
     $ docker build . -t [nome immagine]
 
 A questo punto è stata costruita l'immagine su cui si può istanziare un container tramite il comando :
@@ -40,10 +36,6 @@ NOTA: -i è importante per rendere il container interattivo.
 
 Questa cartella contiene il Dockerfile da cui si può generare l'immagine docker base, cioè contenente unicamente le dipendenze per lo sviluppo del progetto.
 Per costruire l'immagine occorre posizionarsi all'interno della cartella "sem_immagine-base" e digitare il comando:
-  
-    $ docker image build .-t [nome immagine]
-
-per versioni del client docker inferiori alla 1.13 il comando di sopra diventa:
 
     $ docker build . -t [nome immagine]
 
