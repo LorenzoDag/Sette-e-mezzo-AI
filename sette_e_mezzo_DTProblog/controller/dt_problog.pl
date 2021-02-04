@@ -2,20 +2,26 @@
 
 ?::pescare.
 
-valore(Punteggio,Numero, Val):-
+valore(Punteggio, Val):- 
 card(10,denari),
-Val = abs(floor(7.5-Punteggio)); 
+Val = abs(floor(7.5-Punteggio));  
+card(10,Seme),
+\+ Seme = denari,
+Val = 0.5;
+card(9,_),
+Val = 0.5;    
+card(8,_),
+Val = 0.5;
 card(Numero,_),
-Numero < 8, 
-Val = Numero;
-Val = 0.5.
+Numero < 8,
+Val = Numero.
 
 vinco(Mio,Suo):-   
 Suo > 7.5 ;
 not pescare,
 Mio >= Suo;
 pescare,
-valore(Mio, V, N),
+valore(Mio, N),
 P is Mio+N,
 P >= Suo,
 not sballo(Mio).
@@ -29,12 +35,12 @@ Mio < Suo.
 
 sballo(Mio):-
 pescare, 
-valore(Mio, V, N),
+valore(Mio, N),
 P is Mio+N,
 P > 7.5.
 
 miglioro(Mio):-
 pescare,
-valore(Mio, V, N),
+valore(Mio, N),
 P is Mio+N,
 P =< 7.5.

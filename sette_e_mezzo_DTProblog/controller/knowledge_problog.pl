@@ -5,22 +5,30 @@
 
 
 prob_di_sballare(P) :-
-    valore(P, N, V),
+    valore(P, V),
     P1 is V + P,
     P1 > 7.5.
     
     
-valore(Punteggio,Numero, Val):- 
+valore(Punteggio, Val):- 
     card(10,denari),
     Val = abs(floor(7.5-Punteggio));
+    
+    card(10,Seme),
+    \+ Seme = denari,
+    Val = 0.5;
+    
+    card(9,_),
+    Val = 0.5;
+    
+    card(8,_),
+    Val = 0.5;
 
     card(Numero,_),
     Numero < 8,
-    Val = Numero;
-
-    Val = 0.5.
+    Val = Numero.
 
 prob_di_migliorare(Mio_punteggio):-
-    valore(Mio_punteggio, N, Nuovo),
+    valore(Mio_punteggio, Nuovo),
     Nuovo_mio_punteggio is Mio_punteggio + Nuovo,
     Nuovo_mio_punteggio =< 7.5.
